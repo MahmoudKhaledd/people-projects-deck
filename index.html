@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People & Projects — Tawuniya Pitch Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0a0a0f;color:#fff;overflow:hidden;height:100vh;width:100vw}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.8s ease}
+.slide.active{opacity:1;pointer-events:auto}
+.slide-content{width:100%;max-width:1400px;padding:80px;position:relative;z-index:2}
+.bg-img{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.35);z-index:0}
+.bg-overlay{position:absolute;inset:0;z-index:1}
+.gradient-dark{background:linear-gradient(135deg,rgba(10,10,15,0.9) 0%,rgba(10,10,15,0.5) 50%,rgba(10,10,15,0.3) 100%)}
+.gradient-left{background:linear-gradient(to right,rgba(10,10,15,0.95) 0%,rgba(10,10,15,0.7) 40%,transparent 100%)}
+.gradient-bottom{background:linear-gradient(to top,rgba(10,10,15,0.8) 0%,transparent 100%)}
+h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em}
+h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em}
+h3{font-size:clamp(1.1rem,1.8vw,1.4rem);font-weight:600;line-height:1.4}
+p{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.7;color:rgba(255,255,255,0.7);max-width:700px}
+.accent{color:#6C8EFF}
+.accent-warm{color:#FF9F6C}
+.highlight-box{background:rgba(108,142,255,0.08);border-left:3px solid #6C8EFF;padding:24px 32px;border-radius:0 12px 12px 0;margin-top:32px}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.vs-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px;backdrop-filter:blur(10px)}
+.vs-card.bad{border-color:rgba(255,100,100,0.2)}
+.vs-card.good{border-color:rgba(100,255,150,0.2)}
+.vs-card h4{font-size:1rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.vs-card.bad h4{color:#FF6B6B}
+.vs-card.good h4{color:#6CFF8E}
+.vs-card ul{list-style:none;padding:0}
+.vs-card li{font-size:0.9rem;color:rgba(255,255,255,0.6);padding:6px 0;padding-left:20px;position:relative}
+.vs-card li::before{content:'•';position:absolute;left:0;color:inherit;opacity:0.5}
+.tagline{font-size:clamp(1.1rem,2vw,1.4rem);color:rgba(255,255,255,0.6);font-weight:400;margin-top:16px}
+.company{font-size:clamp(0.9rem,1.2vw,1.1rem);text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.4);font-weight:600}
+.three-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.pillar{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;backdrop-filter:blur(10px)}
+.pillar-icon{font-size:2rem;margin-bottom:16px}
+.pillar h4{font-size:1.1rem;font-weight:700;margin-bottom:10px}
+.pillar p{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.6}
+.nav{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:20px}
+.nav-btn{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;backdrop-filter:blur(10px);font-size:1.2rem}
+.nav-btn:hover{background:rgba(108,142,255,0.2);border-color:rgba(108,142,255,0.4)}
+.dots{display:flex;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s}
+.dot.active{background:#6C8EFF;width:24px;border-radius:4px}
+.slide-num{position:fixed;top:40px;right:60px;font-size:0.8rem;color:rgba(255,255,255,0.3);z-index:100;font-weight:500}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.slide.active .slide-content>*{animation:fadeUp 0.7s ease-out both}
+.slide.active .slide-content>*:nth-child(1){animation-delay:0.1s}
+.slide.active .slide-content>*:nth-child(2){animation-delay:0.25s}
+.slide.active .slide-content>*:nth-child(3){animation-delay:0.4s}
+.slide.active .slide-content>*:nth-child(4){animation-delay:0.55s}
+.slide.active .slide-content>*:nth-child(5){animation-delay:0.7s}
+.slide.active .slide-content>*:nth-child(6){animation-delay:0.85s}
+.slide.active .slide-content>*:nth-child(7){animation-delay:1.0s}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide active" id="s1">
+  <div class="bg-img" style="background-image:url('assets/slide1.png')"></div>
+  <div class="bg-overlay gradient-dark"></div>
+  <div class="slide-content" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div class="company">People & Projects</div>
+    <h1 style="margin-top:24px">Agentic AI Consultancy<br>for <span class="accent">Enterprise Teams</span></h1>
+    <p class="tagline" style="max-width:600px;text-align:center;margin-top:32px">We help companies multiply what their teams can build — using the most advanced AI available today.</p>
+  </div>
+</div>
+
+<!-- SLIDE 2: THE GAP -->
+<div class="slide" id="s2">
+  <div class="bg-img" style="background-image:url('assets/slide2.png')"></div>
+  <div class="bg-overlay gradient-left"></div>
+  <div class="slide-content">
+    <div class="company">The Problem</div>
+    <h2 style="margin-top:20px">Your Team Is Capable.<br>The Tools Are Holding Them Back.</h2>
+    <p style="margin-top:24px">Tawuniya's digital team is talented. But today, even with AI tools, every step of development still requires a human in the loop — reviewing, approving, prompting the next action.</p>
+    <p style="margin-top:16px">Work moves faster than before. But nowhere near what is now possible.</p>
+    <div class="highlight-box">
+      <p style="margin:0;color:#fff;font-weight:600;font-size:1.1rem">The gap is not the people. It is the ceiling on their tools.</p>
+      <p style="margin:8px 0 0;color:rgba(255,255,255,0.5);font-size:0.9rem">This is what People & Projects exists to close.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: A SHIFT IS HAPPENING -->
+<div class="slide" id="s3">
+  <div class="bg-img" style="background-image:url('assets/slide3.png')"></div>
+  <div class="bg-overlay gradient-left"></div>
+  <div class="slide-content">
+    <div class="company">The Shift</div>
+    <h2 style="margin-top:20px">The Best Teams Have Stopped Writing Code.<br>They <span class="accent">Direct Agents</span>.</h2>
+    <p style="margin-top:24px">The most productive teams in the world — at Amazon, Google, Shopify — have made a fundamental shift.</p>
+    <p style="margin-top:16px">They no longer ask <em>how do we write this faster</em>. They ask <em>how do we describe what we want and let AI build it</em>.</p>
+    <div style="margin-top:32px;display:flex;gap:32px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">Before</div>
+        <div style="color:rgba(255,255,255,0.5)">Engineers write code</div>
+      </div>
+      <div style="font-size:1.5rem;color:rgba(255,255,255,0.2);align-self:center">→</div>
+      <div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px">After</div>
+        <div style="color:#6C8EFF;font-weight:600">Engineers orchestrate AI agents</div>
+      </div>
+    </div>
+    <p style="margin-top:24px;font-size:0.95rem;color:rgba(255,255,255,0.5)">Humans focus on decisions, not implementation. This shift is available to Tawuniya's team today.</p>
+  </div>
+</div>
+
+<!-- SLIDE 4: WHAT WE DO -->
+<div class="slide" id="s4">
+  <div class="bg-img" style="background-image:url('assets/slide4.png')"></div>
+  <div class="bg-overlay gradient-left"></div>
+  <div class="slide-content">
+    <div class="company">What We Do</div>
+    <h2 style="margin-top:20px">We Do Not Sell Software.<br>We Transform How Teams <span class="accent-warm">Work</span>.</h2>
+    <p style="margin-top:24px">People & Projects is an Agentic AI consultancy. We embed with your team and make the shift real.</p>
+    <div class="three-pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🗺️</div>
+        <h4>AI Transformation Strategy</h4>
+        <p>We assess where your team is, map the highest-leverage opportunities, and build a clear roadmap to 3-5x their current output.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🎓</div>
+        <h4>Training & Upskilling</h4>
+        <p>We teach your team to work with Agentic AI in practice — on real projects, with real workflows. The knowledge stays permanently.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🤝</div>
+        <h4>Embedded Partnership</h4>
+        <p>We do not hand you a strategy document and disappear. We stay until the transformation is measurable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: CLAUDE CODE -->
+<div class="slide" id="s5">
+  <div class="bg-img" style="background-image:url('assets/slide5.png')"></div>
+  <div class="bg-overlay gradient-left"></div>
+  <div class="slide-content">
+    <div class="company">The Platform</div>
+    <h2 style="margin-top:20px">One Platform.<br><span class="accent">20 Times</span> the Output.</h2>
+    <p style="margin-top:20px">The transformation runs on <strong style="color:#fff">Claude Code</strong> — Anthropic's Agentic AI platform. It works like a senior engineer — taking a task from description to finished, tested, deployed code.</p>
+    <div class="vs-grid">
+      <div class="vs-card bad">
+        <h4>❌ Cursor</h4>
+        <ul>
+          <li>Helps write code faster</li>
+          <li>Requires constant prompting</li>
+          <li>Handles one task at a time</li>
+          <li>No memory of your standards</li>
+          <li>Limited integrations</li>
+          <li>No voice mode</li>
+          <li>No mobile control</li>
+        </ul>
+      </div>
+      <div class="vs-card good">
+        <h4>✅ Claude Code</h4>
+        <ul>
+          <li style="color:#6CFF8E;font-weight:600">Completes entire tasks end-to-end</li>
+          <li style="color:#6CFF8E">Runs autonomously in background</li>
+          <li style="color:#6CFF8E">Multiple parallel workstreams</li>
+          <li style="color:#6CFF8E">Remembers team conventions</li>
+          <li style="color:#6CFF8E">Jira, Slack, GitHub, Drive</li>
+          <li style="color:#6CFF8E">20 languages incl. Arabic</li>
+          <li style="color:#6CFF8E">iOS & Android remote control</li>
+        </ul>
+      </div>
+    </div>
+    <div class="highlight-box" style="border-left-color:#6CFF8E;margin-top:32px">
+      <p style="margin:0;color:#fff;font-weight:700;font-size:1.2rem">A team of 4 operates with the output of a team of 20.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" onclick="go(-1)">←</button>
+  <div class="dots">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+    <div class="dot" onclick="goTo(3)"></div>
+    <div class="dot" onclick="goTo(4)"></div>
+  </div>
+  <button class="nav-btn" onclick="go(1)">→</button>
+</div>
+<div class="slide-num"><span id="current">1</span> / 5</div>
+
+<script>
+let cur=0;const total=5;
+function goTo(i){if(i<0||i>=total)return;document.querySelectorAll('.slide').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.dot').forEach(d=>d.classList.remove('active'));cur=i;document.getElementById('s'+(i+1)).classList.add('active');document.querySelectorAll('.dot')[i].classList.add('active');document.getElementById('current').textContent=i+1}
+function go(d){goTo(cur+d)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')go(1);if(e.key==='ArrowLeft')go(-1)});
+document.addEventListener('touchstart',e=>{const x=e.touches[0].clientX;document.addEventListener('touchend',e2=>{const dx=e2.changedTouches[0].clientX-x;if(Math.abs(dx)>50)go(dx<0?1:-1)},{once:true})});
+</script>
+</body>
+</html>
