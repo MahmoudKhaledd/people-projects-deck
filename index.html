@@ -9,19 +9,19 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --terracotta:#DA7756;
-  --terracotta-dark:#C96645;
-  --terracotta-light:rgba(218,119,86,0.08);
-  --near-black:#1A1A1A;
-  --warm-white:#FAF9F6;
-  --warm-gray:#9B9590;
-  --light-sand:#E8E2DB;
-  --text-primary:#1A1A1A;
+  --terracotta:#6366F1;
+  --terracotta-dark:#4F46E5;
+  --terracotta-light:rgba(99,102,241,0.08);
+  --near-black:#111827;
+  --warm-white:#FAFAFA;
+  --warm-gray:#9CA3AF;
+  --light-sand:#E5E7EB;
+  --text-primary:#111827;
   --text-secondary:#6B6560;
-  --text-muted:#9B9590;
+  --text-muted:#9CA3AF;
   --card-bg:#FFFFFF;
-  --card-border:#E8E2DB;
-  --surface:#F5F2EE;
+  --card-border:#E5E7EB;
+  --surface:#F3F4F6;
   --success:#2D9F46;
   --warning:#C98A1A;
   --danger:#D14343;
@@ -32,7 +32,7 @@ body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:var(--w
 .slide-content{width:100%;max-width:1400px;padding:80px;position:relative;z-index:2}
 .slide-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .bg-overlay{position:absolute;inset:0;z-index:1}
-.gradient-dark{background:radial-gradient(ellipse at 30% 50%,rgba(218,119,86,0.05) 0%,transparent 60%)}
+.gradient-dark{background:radial-gradient(ellipse at 30% 50%,rgba(99,102,241,0.05) 0%,transparent 60%)}
 .gradient-left{background:linear-gradient(to right,rgba(250,249,246,0.98) 0%,rgba(250,249,246,0.9) 50%,rgba(250,249,246,0.7) 100%)}
 h1{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em;color:var(--text-primary)}
 h2{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:var(--text-primary)}
@@ -182,7 +182,7 @@ p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;color:var(--text-secondary
       <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:50px">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </div>
-      <div style="background:var(--terracotta-light);border:1px solid rgba(218,119,86,0.2);border-radius:16px;padding:24px">
+      <div style="background:var(--terracotta-light);border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:24px">
         <div style="font-size:0.7rem;color:var(--terracotta);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:14px">How teams work with us</div>
         <div style="display:flex;flex-direction:column;gap:10px">
           <div style="display:flex;align-items:center;gap:10px"><img src="assets/claude-colored.svg" style="height:22px" alt="Claude"><span style="font-size:0.82rem;color:var(--text-primary);font-weight:500">Describe what you want — once</span></div>
@@ -293,10 +293,10 @@ p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;color:var(--text-secondary
         </div>
       </div>
       <div style="display:flex;justify-content:center;margin-bottom:20px">
-        <div style="width:2px;height:20px;background:rgba(218,119,86,0.3)"></div>
+        <div style="width:2px;height:20px;background:rgba(99,102,241,0.3)"></div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px">
-        <div style="background:var(--card-bg);border:1px solid rgba(218,119,86,0.2);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
           <div style="width:30px;height:30px;border-radius:8px;background:var(--terracotta);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.7rem;color:#fff;margin:0 auto 10px">A</div>
           <div style="font-size:0.78rem;font-weight:600;margin-bottom:3px;color:var(--text-primary)">Spec Agent</div>
           <div style="font-size:0.68rem;color:var(--text-muted)">Researches requirements, writes technical spec</div>
@@ -311,7 +311,7 @@ p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;color:var(--text-secondary
           <div style="font-size:0.78rem;font-weight:600;margin-bottom:3px;color:var(--text-primary)">Test Agent</div>
           <div style="font-size:0.68rem;color:var(--text-muted)">Writes and runs all automated tests</div>
         </div>
-        <div style="background:var(--card-bg);border:1px solid rgba(218,119,86,0.15);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="background:var(--card-bg);border:1px solid rgba(99,102,241,0.15);border-radius:12px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
           <div style="width:30px;height:30px;border-radius:8px;background:#FF9F6C;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.7rem;color:#fff;margin:0 auto 10px">D</div>
           <div style="font-size:0.78rem;font-weight:600;margin-bottom:3px;color:var(--text-primary)">Ship Agent</div>
           <div style="font-size:0.68rem;color:var(--text-muted)">Updates docs, opens pull request</div>
@@ -492,7 +492,7 @@ p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;color:var(--text-secondary
         <!-- Phase dots connected by line -->
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
           <div style="width:12px;height:12px;border-radius:50%;background:var(--terracotta);opacity:0.5"></div>
-          <div style="width:2px;height:40px;background:linear-gradient(to bottom,rgba(218,119,86,0.5),rgba(201,138,26,0.6));margin-top:4px"></div>
+          <div style="width:2px;height:40px;background:linear-gradient(to bottom,rgba(99,102,241,0.5),rgba(201,138,26,0.6));margin-top:4px"></div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
           <div style="width:2px;height:0;background:transparent"></div>
