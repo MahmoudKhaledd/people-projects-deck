@@ -486,14 +486,75 @@ p{font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.6;color:var(--text-secondary
         </ul>
       </div>
     </div>
-    <div style="margin-top:28px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
-      <div style="display:flex;align-items:end;gap:0;height:70px">
-        <div style="flex:1;background:var(--terracotta);height:20%;border-radius:4px 4px 0 0;opacity:0.4"><span style="display:block;text-align:center;font-size:0.6rem;color:var(--text-muted);margin-top:8px">M1</span></div>
-        <div style="flex:1;background:linear-gradient(to top,var(--terracotta),var(--warning));height:50%;border-radius:4px 4px 0 0;opacity:0.6"><span style="display:block;text-align:center;font-size:0.6rem;color:var(--text-muted);margin-top:8px">M2</span></div>
-        <div style="flex:1;background:linear-gradient(to top,var(--warning),var(--success));height:100%;border-radius:4px 4px 0 0;opacity:0.8"><span style="display:block;text-align:center;font-size:0.6rem;color:#fff;margin-top:8px">M3</span></div>
-        <div style="flex:1;background:var(--success);height:100%;border-radius:4px 4px 0 0;opacity:0.3"><span style="display:block;text-align:center;font-size:0.6rem;color:var(--text-muted);margin-top:8px">∞</span></div>
+    <!-- Growth journey visual -->
+    <div style="margin-top:28px;position:relative">
+      <div style="display:flex;align-items:center;gap:0">
+        <!-- Phase dots connected by line -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:12px;height:12px;border-radius:50%;background:var(--terracotta);opacity:0.5"></div>
+          <div style="width:2px;height:40px;background:linear-gradient(to bottom,rgba(218,119,86,0.5),rgba(201,138,26,0.6));margin-top:4px"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:2px;height:0;background:transparent"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:12px;height:12px;border-radius:50%;background:var(--warning);opacity:0.7"></div>
+          <div style="width:2px;height:40px;background:linear-gradient(to bottom,rgba(201,138,26,0.6),rgba(45,159,70,0.8));margin-top:4px"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:2px;height:0;background:transparent"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:14px;height:14px;border-radius:50%;background:var(--success)"></div>
+          <div style="width:2px;height:40px;background:var(--success);opacity:0.3;margin-top:4px"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:2px;height:0;background:transparent"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--success);opacity:0.2"></div>
+          <div style="width:2px;height:40px;background:var(--success);opacity:0.15;margin-top:6px"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1;position:relative">
+          <div style="width:10px;height:10px;border-radius:50%;background:var(--success);opacity:0.1"></div>
+        </div>
       </div>
-      <p style="margin:16px 0 0;font-size:0.82rem;color:var(--text-muted);line-height:1.6">We stay. We train new team members as they join. We introduce new capabilities as Claude Code evolves — it ships major updates every week. Your team never falls behind the frontier.</p>
+      <!-- Labels -->
+      <div style="display:flex;margin-top:12px">
+        <div style="flex:1;text-align:center"><span style="font-size:0.65rem;color:var(--text-muted)">Foundation</span></div>
+        <div style="flex:1"></div>
+        <div style="flex:1;text-align:center"><span style="font-size:0.65rem;color:var(--text-muted)">Acceleration</span></div>
+        <div style="flex:1"></div>
+        <div style="flex:1;text-align:center"><span style="font-size:0.65rem;color:var(--success);font-weight:600">Transformation</span></div>
+        <div style="flex:1"></div>
+        <div style="flex:1;text-align:center"><span style="font-size:0.65rem;color:var(--text-muted)">Ongoing</span></div>
+        <div style="flex:1"></div>
+        <div style="flex:1;text-align:center"><span style="font-size:0.65rem;color:var(--text-muted)">∞</span></div>
+      </div>
+    </div>
+    <!-- Ongoing commitment -->
+    <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:16px 20px;display:flex;align-items:start;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="width:36px;height:36px;border-radius:10px;background:var(--terracotta-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem">🔄</div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary)">Continuous Training</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px">We onboard new team members as they join.</div>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:16px 20px;display:flex;align-items:start;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="width:36px;height:36px;border-radius:10px;background:rgba(45,159,70,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem">🚀</div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary)">Weekly Upgrades</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px">Claude Code ships major updates every week. We keep you current.</div>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:16px 20px;display:flex;align-items:start;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04)">
+        <div style="width:36px;height:36px;border-radius:10px;background:rgba(201,138,26,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem">🛡️</div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary)">Never Behind</div>
+          <div style="font-size:0.78rem;color:var(--text-muted);margin-top:2px">Your team stays at the frontier of AI capability.</div>
+        </div>
+      </div>
     </div>
     <div class="highlight-box" style="margin-top:20px">
       <p style="margin:0;font-weight:700;font-size:1.1rem">The goal is not adoption. The goal is transformation.</p>
